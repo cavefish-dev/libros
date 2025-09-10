@@ -5,6 +5,7 @@ Este repositorio contiene libros digitales disponibles para consulta y descarga.
 |-|-|-|
 | Bases de Datos | Libro de texto para los módulos “Gestión de Base de Datos (0372)” y “Bases de datos (0484)” de Formación Profesional | [Descargar](https://github.com/cavefish-dev/libros/raw/main/bases_de_datos.pdf) |
 | Programación en Java | Libro de texto para el módulo “Programación (0485)” de Formación Profesional | [Descargar](https://github.com/cavefish-dev/libros/raw/main/programacion_en_java.pdf) |
+| Sistemas Informáticos | Libro de texto para el módulo “Sistemas Informáticos (0483)” de Formación Profesional | [Descargar](https://github.com/cavefish-dev/libros/raw/main/sistemas_informaticos.pdf) |
 
 # Licencia
 
