@@ -59,3 +59,4 @@ services:
       - postgres
     volumes:
       - ./pgadmin_servers.json:/pgadmin4/servers.json
+      - ./pgadmin_home:/home
