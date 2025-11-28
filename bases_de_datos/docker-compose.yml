@@ -28,6 +28,7 @@ services:
       - "5432:5432"
     volumes:
       - ./init_db_psql:/docker-entrypoint-initdb.d
+      - ./psql_home:/home
     healthcheck:
       test: ["CMD-SHELL", "pg_isready", "-d", "db_prod"]
       timeout: 20s
@@ -59,4 +60,4 @@ services:
       - postgres
     volumes:
       - ./pgadmin_servers.json:/pgadmin4/servers.json
-      - ./pgadmin_home:/home
+      - ./psql_home:/home
