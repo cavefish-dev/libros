@@ -12,6 +12,7 @@ services:
       - "3306:3306"
     volumes:
       - ./init_db_mysql:/docker-entrypoint-initdb.d
+      - ./mysql_home:/home
     healthcheck:
       test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
       timeout: 20s
@@ -34,8 +35,11 @@ services:
       timeout: 20s
       retries: 10
 
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
+  phpmyadmin_x64:
+    image: phpmyadmin/phpmyadmin:5.2.3
+    platform: linux/amd64
+    profiles:
+      - x64
     restart: always
     environment:
       PMA_HOST: mysql
@@ -43,11 +47,30 @@ services:
       PMA_PASSWORD: examplepass
     ports:
       - "8080:80"
+    volumes:
+      - ./mysql_home:/home
+    depends_on:
+      - mysql
+
+  phpmyadmin_arm64:
+    image: arm64v8/phpmyadmin:5.2.3
+    platform: linux/arm64/v8
+    profiles:
+      - arm64
+    restart: always
+    environment:
+      PMA_HOST: mysql
+      PMA_USER: exampleuser
+      PMA_PASSWORD: examplepass
+    ports:
+      - "8080:80"
+    volumes:
+      - ./mysql_home:/home
     depends_on:
       - mysql
 
   pgadmin:
-    image: dpage/pgadmin4
+    image: dpage/pgadmin4:9.10.0
     restart: always
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@example.com
