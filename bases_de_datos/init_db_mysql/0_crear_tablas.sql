@@ -13,7 +13,8 @@ CREATE TABLE estudiantes (
 CREATE TABLE cursos (
     id_curso INT PRIMARY KEY AUTO_INCREMENT,
     nombre_curso VARCHAR(100) NOT NULL,
-    descripcion TEXT
+    descripcion TEXT,
+    creditos INT NOT NULL
 );
 
 CREATE TABLE inscripciones (
