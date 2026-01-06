@@ -1,4 +1,7 @@
 -- Script para cargar datos de ejemplo en las tablas
+DELETE FROM estudiantes;
+DELETE FROM cursos;
+DELETE FROM profesores;
 
 -- Insertar estudiantes
 INSERT INTO estudiantes (nombre, apellido, ciudad, fecha_nacimiento, email, promedio) VALUES
@@ -21,7 +24,12 @@ INSERT INTO estudiantes (nombre, apellido, ciudad, fecha_nacimiento, email, prom
 ('Alberto', 'Moreno', 'León', '2000-05-06', 'alberto.moreno@email.com', 8.3), -- Id: 17
 ('Teresa', 'Gil', 'Logroño', '2002-12-13', 'teresa.gil@email.com', 7.8), -- Id: 18
 ('Francisco', 'Lara', 'Burgos', '1998-03-21', 'francisco.lara@email.com', 8.0), -- Id: 19
-('Marta', 'Cruz', 'Almería', '2001-09-02', 'marta.cruz@email.com', 8.6); -- Id: 20
+('Marta', 'Cruz', 'Almería', '2001-09-02', 'marta.cruz@email.com', 8.6), -- Id: 20
+('Nuria', 'Sanz', 'Pamplona', '2002-08-15', 'nuria.sanz@email.com', 8.2), -- Id: 21
+('Hugo', 'Delgado', 'Segovia', '2000-03-11', 'hugo.delgado@email.com', 7.7), -- Id: 22
+('Clara', 'Ramos', 'Cuenca', '2001-12-20', 'clara.ramos@email.com', 8.5), -- Id: 23
+('Andrés', 'Pardo', 'Ávila', '1999-06-28', 'andres.pardo@email.com', 7.9), -- Id: 24
+('Sonia', 'Nieto', 'Ciudad Real', '2002-04-03', 'sonia.nieto@email.com', 8.4); -- Id: 25
 
 
 -- Insertar cursos
@@ -47,7 +55,12 @@ INSERT INTO cursos (nombre_curso, descripcion, creditos) VALUES
 ('Filosofía', 'Curso de introducción a la filosofía', 3), -- Id: 19
 ('Informática', 'Curso de informática básica', 4), -- Id: 20
 ('Inglés', 'Curso de inglés intermedio', 4), -- Id: 21
-('Francés', 'Curso de francés básico', 3); -- Id: 22
+('Francés', 'Curso de francés básico', 3), -- Id: 22
+('Robótica', 'Curso de introducción a la robótica', 5), -- Id: 23
+('Derecho', 'Curso de derecho civil', 4), -- Id: 24
+('Marketing', 'Curso de marketing digital', 3), -- Id: 25
+('Fotografía', 'Curso de fotografía artística', 2), -- Id: 26
+('Astronomía', 'Curso de astronomía básica', 3); -- Id: 27
 
 
 -- Insertar profesores
@@ -61,7 +74,12 @@ INSERT INTO profesores (nombre, apellido, ciudad, email, antiguedad, salario) VA
 ('Manuel', 'Santos', 'Valencia', 'manuel.santos@email.com', 11, 1350), -- Id: 7
 ('Beatriz', 'López', 'Sevilla', 'beatriz.lopez@email.com', 6, 1200), -- Id: 8
 ('Ricardo', 'Pérez', 'Bilbao', 'ricardo.perez@email.com', 13, 1450), -- Id: 9
-('Silvia', 'Romero', 'Zaragoza', 'silvia.romero@email.com', 8, 1280); -- Id: 10
+('Silvia', 'Romero', 'Zaragoza', 'silvia.romero@email.com', 8, 1280), -- Id: 10
+('Joaquín', 'Herrera', 'Toledo', 'joaquin.herrera@email.com', 10, 1320), -- Id: 11
+('Mónica', 'Crespo', 'Pamplona', 'monica.crespo@email.com', 7, 1200), -- Id: 12
+('Álvaro', 'Soto', 'Segovia', 'alvaro.soto@email.com', 9, 1370), -- Id: 13
+('Paula', 'Vidal', 'Cuenca', 'paula.vidal@email.com', 8, 1290), -- Id: 14
+('Vicente', 'Rey', 'Ávila', 'vicente.rey@email.com', 12, 1410); -- Id: 15
 
 
 -- Insertar inscripciones
