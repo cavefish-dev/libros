@@ -11,15 +11,15 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - ./init_db_mysql:/docker-entrypoint-initdb.d
-      - ./mysql_home:/home
+      - ./mysql/init_db:/docker-entrypoint-initdb.d
+      - ./mysql/home:/home
     healthcheck:
       test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
       timeout: 20s
       retries: 10
 
   postgres:
-    image: postgres:15
+    image: postgres:18
     restart: always
     environment:
       POSTGRES_DB: exampledb
@@ -28,8 +28,8 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - ./init_db_psql:/docker-entrypoint-initdb.d
-      - ./psql_home:/home
+      - ./psql/init_db:/docker-entrypoint-initdb.d
+      - ./psql/home:/home
     healthcheck:
       test: ["CMD-SHELL", "pg_isready", "-d", "db_prod"]
       timeout: 20s
@@ -46,9 +46,9 @@ services:
       PMA_USER: exampleuser
       PMA_PASSWORD: examplepass
     ports:
-      - "8080:80"
+      - "8082:80"
     volumes:
-      - ./mysql_home:/home
+      - ./mysql/home:/home
     depends_on:
       - mysql
 
@@ -63,14 +63,14 @@ services:
       PMA_USER: exampleuser
       PMA_PASSWORD: examplepass
     ports:
-      - "8080:80"
+      - "8082:80"
     volumes:
-      - ./mysql_home:/home
+      - ./mysql/home:/home
     depends_on:
       - mysql
 
   pgadmin:
-    image: dpage/pgadmin4:9.10.0
+    image: dpage/pgadmin4:9.12.0
     restart: always
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@example.com
@@ -82,5 +82,5 @@ services:
     depends_on:
       - postgres
     volumes:
-      - ./pgadmin_servers.json:/pgadmin4/servers.json
-      - ./psql_home:/home
+      - ./psql/pgadmin/servers.json:/pgadmin4/servers.json
+      - ./psql/home:/home
