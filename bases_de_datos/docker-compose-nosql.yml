@@ -15,6 +15,7 @@ services:
     image: mongo-express:1.0.2
     ports:
       - "8082:8081"
+    restart: always
     environment:
       ME_CONFIG_BASICAUTH_ENABLED: true
       ME_CONFIG_BASICAUTH_USERNAME: admin
