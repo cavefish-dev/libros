@@ -1,16 +1,18 @@
 name: ejemplos_nosql
 services:
   mongo:
-    image: mongo:latest
+    image: mongo:8.2.5
     restart: always
     ports:
       - "27017:27017"
     environment:
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: admin123
+    volumes:
+      - ./mongodb/init_db:/docker-entrypoint-initdb.d:ro
 
   mongo-express:
-    image: mongo-express:latest
+    image: mongo-express:1.0.2
     ports:
       - "8082:8081"
     environment:
