@@ -37,11 +37,11 @@ INSERT INTO cursos (nombre_curso, descripcion, creditos) VALUES
 ('Matemáticas', 'Curso de matemáticas básicas', 5), -- Id: 1
 ('Historia', 'Curso de historia universal', 4), -- Id: 2
 ('Programación', 'Curso de introducción a la programación', 6), -- Id: 3
-('Filosofía', 'Curso de filosofía antigua', 3), -- Id: 4
-('Química', 'Curso de química básica', 5), -- Id: 5
+('Filosofía I', 'Curso de filosofía antigua', 3), -- Id: 4
+('Química I', 'Curso de química básica', 5), -- Id: 5
 ('Física', 'Curso de física general', 5), -- Id: 6
 ('Literatura', 'Curso de literatura española', 4), -- Id: 7
-('Química', 'Curso de química orgánica', 5), -- Id: 8
+('Química II', 'Curso de química orgánica', 5), -- Id: 8
 ('Biología', 'Curso de biología general', 4), -- Id: 9
 ('Geografía', 'Curso de geografía mundial', 4), -- Id: 10
 ('Arte', 'Curso de historia del arte', 3), -- Id: 11
@@ -52,7 +52,7 @@ INSERT INTO cursos (nombre_curso, descripcion, creditos) VALUES
 ('Educación Física', 'Curso de actividad física y salud', 2), -- Id: 16
 ('Música', 'Curso de apreciación musical', 3), -- Id: 17
 ('Economía', 'Curso de economía básica', 4), -- Id: 18
-('Filosofía', 'Curso de introducción a la filosofía', 3), -- Id: 19
+('Filosofía II', 'Curso de introducción a la filosofía', 3), -- Id: 19
 ('Informática', 'Curso de informática básica', 4), -- Id: 20
 ('Inglés', 'Curso de inglés intermedio', 4), -- Id: 21
 ('Francés', 'Curso de francés básico', 3), -- Id: 22
