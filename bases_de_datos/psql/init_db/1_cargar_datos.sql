@@ -84,7 +84,7 @@ INSERT INTO profesores (nombre, apellido, ciudad, email, antiguedad, salario) VA
 
 -- Insertar inscripciones
 
-INSERT INTO inscripciones (id_estudiante, id_curso, fecha_inscripcion) VALUES
+INSERT INTO inscripciones (estudiante_id, curso_id, fecha_inscripcion) VALUES
 (1, 1, '2025-01-10'), (1, 2, '2025-01-11'), (1, 3, '2025-01-12'), (1, 4, '2025-01-13'),
 (2, 2, '2025-01-14'), (2, 3, '2025-01-15'), (2, 5, '2025-01-16'),
 (3, 1, '2025-01-17'), (3, 4, '2025-01-18'), (3, 6, '2025-01-19'),
@@ -107,7 +107,7 @@ INSERT INTO inscripciones (id_estudiante, id_curso, fecha_inscripcion) VALUES
 (20, 13, '2025-03-09'), (20, 18, '2025-03-10'), (20, 1, '2025-03-11');
 
 -- Insertar cursos_profesores
-INSERT INTO cursos_profesores (id_curso, id_profesor) VALUES
+INSERT INTO cursos_profesores (curso_id, profesor_id) VALUES
 (1, 1), (1, 2), (1, 3),
 (2, 2), (2, 4),
 (3, 3), (3, 5), (3, 6),

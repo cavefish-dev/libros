@@ -1,7 +1,7 @@
 -- Script para crear tablas relacionadas con estudiantes
 
 CREATE TABLE estudiantes (
-    id_estudiante INT PRIMARY KEY AUTO_INCREMENT,
+    estudiante_id INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(100) NOT NULL,
     apellido VARCHAR(100) NOT NULL,
     ciudad VARCHAR(100) NOT NULL,
@@ -11,23 +11,23 @@ CREATE TABLE estudiantes (
 );
 
 CREATE TABLE cursos (
-    id_curso INT PRIMARY KEY AUTO_INCREMENT,
+    curso_id INT PRIMARY KEY AUTO_INCREMENT,
     nombre_curso VARCHAR(100) NOT NULL,
     descripcion TEXT,
     creditos INT NOT NULL
 );
 
 CREATE TABLE inscripciones (
-    id_inscripcion INT PRIMARY KEY AUTO_INCREMENT,
-    id_estudiante INT,
-    id_curso INT,
+    inscripcion_id INT PRIMARY KEY AUTO_INCREMENT,
+    estudiante_id INT,
+    curso_id INT,
     fecha_inscripcion DATE,
-    FOREIGN KEY (id_estudiante) REFERENCES estudiantes(id_estudiante) ON DELETE CASCADE,
-    FOREIGN KEY (id_curso) REFERENCES cursos(id_curso) ON DELETE CASCADE
+    FOREIGN KEY (estudiante_id) REFERENCES estudiantes(estudiante_id) ON DELETE CASCADE,
+    FOREIGN KEY (curso_id) REFERENCES cursos(curso_id) ON DELETE CASCADE
 );
 
 CREATE TABLE profesores (
-    id_profesor INT PRIMARY KEY AUTO_INCREMENT,
+    profesor_id INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(100) NOT NULL,
     apellido VARCHAR(100) NOT NULL,
     ciudad VARCHAR(100) NOT NULL,
@@ -37,9 +37,9 @@ CREATE TABLE profesores (
 );
 
 CREATE TABLE cursos_profesores (
-    id_curso INT,
-    id_profesor INT,
-    PRIMARY KEY (id_curso, id_profesor),
-    FOREIGN KEY (id_curso) REFERENCES cursos(id_curso) ON DELETE CASCADE,
-    FOREIGN KEY (id_profesor) REFERENCES profesores(id_profesor) ON DELETE CASCADE
+    curso_id INT,
+    profesor_id INT,
+    PRIMARY KEY (curso_id, profesor_id),
+    FOREIGN KEY (curso_id) REFERENCES cursos(curso_id) ON DELETE CASCADE,
+    FOREIGN KEY (profesor_id) REFERENCES profesores(profesor_id) ON DELETE CASCADE
 );
