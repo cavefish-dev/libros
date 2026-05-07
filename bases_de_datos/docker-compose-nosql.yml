@@ -10,6 +10,7 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: admin123
     volumes:
       - ./mongodb/init_db:/docker-entrypoint-initdb.d:ro
+      - ./mongodb/home:/home
 
   mongo-express:
     image: mongo-express:1.0.2
